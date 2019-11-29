@@ -1,0 +1,207 @@
+\documentclass[10pt]{article}
+
+\usepackage{enumerate,graphicx,tikz,pgfpages}
+\usepackage[final]{pdfpages}
+\usepackage{amssymb}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\large \bf Theory of Computation\\[3pt]  Mock benchtest}
+\end{center}
+
+\bigskip 
+
+\begin{center}
+{\large \bf Part I: Models of Computation}
+\end{center}
+
+% ***********************************************************
+
+\noindent {\bf \underline{Question 1}}
+
+\bigskip \noindent  Which of the following two assertions about a Turing Machine (TM) is true? 
+\begin{enumerate} 
+\item[(i)] The input alphabet can be the same as the tape alphabet. 
+\item[(ii)] At a given moment, there could be infinitely many symbols 
+from the input alphabet onto the tape. 
+\end{enumerate}
+
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt}
+\item The first only. 
+\item The second only. 
+\item Both of them. 
+\item Neither of them. 
+\end{enumerate}
+%Answer D from the definition
+
+\bigskip
+
+% ***********************************************************
+
+\noindent {\bf \underline{Question 2}}
+
+\bigskip \noindent  Consider the complement of the Halting Problem ($H$), $\mathrm{co-}H$: 
+given a TM ${\mathcal M}$ and an input $w$, is it the case that ${\mathcal M}$ 
+doesn't terminate on input $w$? Which of the following is true? 
+
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt} 
+\item This problem is not semi-decidable. 
+\item This problem is semi-decidable but not decidable. 
+\item This problem is decidable. 
+\item None of them. 
+\end{enumerate}
+%Answer A: if it were semi-decidable and given than H is semi-decidable, H would be decidable.
+
+\bigskip
+
+% ***********************************************************
+
+\noindent {\bf \underline{Question 3}}
+
+\bigskip \noindent  What can you say about reducibilities between $H$ and $\mathrm{co-}H$?
+
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt} 
+\item $H$ is m-reducible to $\mathrm{co-}H$. 
+\item $\mathrm{co-}H$ is m-reducible to $H$.
+\item Neither is true.
+\item Both are true. 
+\end{enumerate}
+
+The same question but this time with T-reduction, instead of m-reduction.
+% Answer C for m-reduction and D for T-reduction.
+
+\bigskip
+
+% ***********************************************************
+
+\noindent {\bf \underline{Question 4}}
+
+\bigskip \noindent  What is the sequence encoded by the G{\"o}del Number $600$?
+
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt} 
+\item $3, 1, 1$. 
+\item $2, 0, 1$.
+\item $2, 3, 5$. 
+\item None of them. 
+\end{enumerate}
+% Answer A. We defined the G{\"o}del Number of a sequence $x_1,\dots x_{n-1},x_{n}$ to be
+% $p_1^{x_1}\dots p_{n-1}^{x_{n-1}} p_n^{x_{n}+1}$. 
+
+\newpage
+
+\noindent {\bf \underline{Question 5}}
+
+\bigskip \noindent  Which of the following has a proof?
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt} 
+\item Every positive instance of the Halting Problem $H$. 
+\item Some negative instances of $H$.
+\item All negative instances of $\mathrm{co-}H$.
+\item All of the above. 
+\item None of the above. 
+\end{enumerate}
+% Answer D. (A) and (C) are the same and a simulation of the run is a proof. Trivial TMs that go straight into an infinite loop ignoring the input have proof for non-termination.
+
+\bigskip
+\begin{center}
+{\large \bf Part II: Algorithms and Complexity}
+\end{center}
+
+\bigskip
+\noindent 
+{\bf \underline{Question 6}}
+
+\bigskip 
+\noindent
+Let $f(n)$ and $g(n)$ be two positive functions defined on the
+natural numbers. Suppose there exist constants $c>0$ and $n_0$ such
+that $f(n_0) \leq cg(n_0)$. Which statement below can we deduce from
+this?
+
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt}
+\item $f(n)=O(g(n))$
+\item $f(n)=\Omega(g(n))$
+\item $f(n)=\Theta(g(n))$
+\item Each of the above can be deduced.
+\item None of the above can be deduced.
+\end{enumerate}
+%Answer: E
+
+\bigskip
+\noindent 
+{\bf \underline{Question 7}}
+
+\bigskip 
+\noindent
+Let $T(n)=8T(\frac{n}{2})+n^2$ (where we interpret $\frac{n}{2}$ to
+mean $\lfloor \frac{n}{2}\rfloor$). Which statement below is true?
+
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt}
+\item $T(n)=\Theta(n^2)$.
+\item $T(n)=\Theta(n^3)$.
+\item $T(n)=\Theta(n^3\mbox{lg}\,n)$.
+\item $T(n)=\Theta(n^4)$.
+\item None of the above is true.
+\end{enumerate}
+%Answer: B
+
+\newpage
+\noindent
+{\bf \underline{Question 8}}
+
+\bigskip
+\noindent
+Let $A$ be a $3\times 3$ matrix. Let $B$ be a $3\times 1$ matrix. Let $C$ be a $3\times 3$ matrix.
+Which statement below is true?
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt}
+\item The number of ways to parenthesize $ABC$ is $27$.
+\item The number of ways to parenthesize $ABC$ is $28$.
+\item The number of ways to parenthesize $ABC$ is $1$.
+\item It is not possible tot compute the matrix product $ABC$. 
+\item None of the above.
+\end{enumerate}
+%Answer: D
+
+\bigskip
+\noindent 
+{\bf \underline{Question 9}}
+
+\bigskip 
+\noindent
+Which problem below can be solved by a greedy algorithm?
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt}
+\item Longest Common Subsequence.
+\item 0-1 knapsack.
+\item Fractional knapsack.
+\item Rod cutting.
+\item None of the above.
+\end{enumerate}
+%Answer: C
+
+\bigskip
+\noindent 
+{\bf \underline{Question 10}}
+
+\bigskip \noindent
+For $r\geq 1$, let $G$ be the $(r+1)$-vertex star  with vertices $u$, $v_1,\ldots,v_r$ and edges $uv_1,\ldots,uv_r$. Which statement below is true?
+\begin{enumerate}[{\bf (A)}]
+\addtolength{\itemsep}{-5pt}
+\item $G$ is $P_4$-free, but not a cograph.
+\item $G$ is a cograph but, depending on $r$, may not always be a $P_4$-free graph.
+\item $G$ is a cograph and a $P_4$-free graph.
+\item None of the above.
+\end{enumerate}
+%Answer: C
+
+\end{document}
